@@ -8,6 +8,9 @@
 </head>
 <body>
 
+  <!-- スクロールプログレスバー -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- ナビゲーション -->
   <header class="site-header">
     <div class="inner">
@@ -29,11 +32,28 @@
 
   <!-- ファーストビュー -->
   <section id="top" class="hero">
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+    <div class="hero-orb hero-orb--3"></div>
     <div class="hero-inner inner">
       <p class="hero-label">Claude Code × AI × LP制作</p>
-      <h1 class="hero-title">AIで作る、<br>本気のLP。</h1>
-      <p class="hero-sub">実績ゼロからのリアルな挑戦。<br>まず1件、一緒に作りましょう。</p>
+      <h1 class="hero-title">AIで作る、<br><span class="hero-title-accent">本気のLP。</span></h1>
+      <p class="hero-sub"></p>
       <a href="#contact" class="cta-btn">お問い合わせはこちら</a>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <p class="stat-num" data-target="3">0</p>
+          <p class="stat-label">制作実績</p>
+        </div>
+        <div class="hero-stat">
+          <p class="stat-num">1〜2</p>
+          <p class="stat-label">週間納期</p>
+        </div>
+        <div class="hero-stat">
+          <p class="stat-num">30,000</p>
+          <p class="stat-label">円〜</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -69,30 +89,42 @@
         <li class="works-item">
           <div class="works-thumb">
             <img src="images/work01.jpg" alt="LP制作実績01">
+            <div class="works-overlay">
+              <a href="https://issei1130.github.io/midori-seitai/" class="works-overlay-btn" target="_blank">サイトを見る →</a>
+            </div>
           </div>
           <div class="works-info">
+            <span class="works-tag">整体院</span>
             <h3 class="works-title">LP制作 01</h3>
-            <p class="works-desc">HTML / CSS / JS で制作した1ページLP。Claude Code を活用してゼロから実装。</p>
+            <p class="works-desc">整体院向け集客LP。予約導線を重視した構成をClaude Codeでゼロから実装。</p>
             <a href="https://issei1130.github.io/midori-seitai/" class="works-link" target="_blank">サイトを見る →</a>
           </div>
         </li>
         <li class="works-item">
           <div class="works-thumb">
             <img src="images/work02.jpg" alt="LP制作実績02">
+            <div class="works-overlay">
+              <a href="https://issei1130.github.io/hair-salon-lp/" class="works-overlay-btn" target="_blank">サイトを見る →</a>
+            </div>
           </div>
           <div class="works-info">
+            <span class="works-tag">美容室</span>
             <h3 class="works-title">LP制作 02</h3>
-            <p class="works-desc">HTML / CSS / JS で制作した1ページLP。Claude Code を活用してゼロから実装。</p>
+            <p class="works-desc">美容室向け新規集客LP。ブランドイメージに合わせたビジュアルをClaude Codeで制作。</p>
             <a href="https://issei1130.github.io/hair-salon-lp/" class="works-link" target="_blank">サイトを見る →</a>
           </div>
         </li>
         <li class="works-item">
           <div class="works-thumb">
             <img src="images/work03.jpg" alt="ブログサイトLP">
+            <div class="works-overlay">
+              <a href="https://issei1130.github.io/portfolio-lp-blog/" class="works-overlay-btn" target="_blank">サイトを見る →</a>
+            </div>
           </div>
           <div class="works-info">
+            <span class="works-tag">情報発信</span>
             <h3 class="works-title">ブログサイト LP</h3>
-            <p class="works-desc">HTML / CSS / JS で制作したブログサイト型LP。Claude Code を活用してゼロから実装。</p>
+            <p class="works-desc">情報発信者向けLP。世界観とCTAを凝縮した1ページをClaude Codeで実装。</p>
             <a href="https://issei1130.github.io/portfolio-lp-blog/" class="works-link" target="_blank">サイトを見る →</a>
           </div>
         </li>
