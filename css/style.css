@@ -1,0 +1,446 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+
+/* ===== 変数 ===== */
+:root {
+  --color-main:    #1d3461;
+  --color-accent:  #e8633a;
+  --color-bg:      #f8f7f4;
+  --color-text:    #2c2c2c;
+  --color-light:   #ffffff;
+  --color-border:  #e2ddd8;
+  --font-base: 'Noto Sans JP', sans-serif;
+  --inner-width: 1000px;
+  --radius: 8px;
+}
+
+/* ===== リセット・ベース ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-base); color: var(--color-text); background: var(--color-bg); line-height: 1.8; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+/* ===== レイアウト ===== */
+.inner { width: 90%; max-width: var(--inner-width); margin: 0 auto; }
+section { padding: 80px 0; }
+
+/* ===== 共通：セクションタイトル ===== */
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--color-main);
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 10px auto 0;
+}
+.section-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 40px;
+}
+
+/* ===== 共通：CTAボタン ===== */
+.cta-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: var(--color-accent);
+  color: var(--color-light);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.cta-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+.cta-btn--light {
+  background: var(--color-light);
+  color: var(--color-accent);
+}
+
+/* ===== ヘッダー ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--color-light);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+  padding: 16px 0;
+  transition: box-shadow 0.3s;
+}
+.site-header .inner { display: flex; justify-content: space-between; align-items: center; }
+.logo a {
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--color-main);
+  letter-spacing: 0.03em;
+}
+.nav-list { display: flex; align-items: center; gap: 28px; }
+.nav-list a { font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+.nav-list a:hover { color: var(--color-accent); }
+.nav-cta {
+  background: var(--color-accent);
+  color: var(--color-light) !important;
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  font-weight: 700 !important;
+}
+.nav-cta:hover { opacity: 0.85; color: var(--color-light) !important; }
+.nav-toggle { display: none; }
+
+/* ===== ヒーロー ===== */
+.hero {
+  background: var(--color-main);
+  color: var(--color-light);
+  padding: 120px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -60px;
+  width: 400px;
+  height: 400px;
+  background: rgba(232,99,58,0.12);
+  border-radius: 50%;
+}
+.hero-inner { position: relative; z-index: 1; }
+.hero-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.hero-sub {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-bottom: 36px;
+  line-height: 1.9;
+}
+
+/* ===== プロフィール ===== */
+.about { background: var(--color-light); }
+.about-content { display: flex; align-items: flex-start; gap: 48px; max-width: 800px; margin: 40px auto 0; }
+.about-avatar {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--color-main);
+  color: var(--color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+}
+.about-name { font-size: 1.3rem; font-weight: 700; color: var(--color-main); margin-bottom: 12px; }
+.about-desc { font-size: 0.95rem; line-height: 2; color: #555; margin-bottom: 20px; }
+.about-links { display: flex; gap: 12px; }
+.about-link {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 2px solid var(--color-main);
+  color: var(--color-main);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+.about-link:hover { background: var(--color-main); color: var(--color-light); }
+
+/* ===== 制作実績 ===== */
+.works { background: var(--color-bg); }
+.works-list { display: flex; flex-direction: column; gap: 40px; }
+.works-item {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: var(--color-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: box-shadow 0.3s;
+}
+.works-item:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.works-thumb {
+  flex-shrink: 0;
+  width: 280px;
+  height: 200px;
+  overflow: hidden;
+  background: #e8e4df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.works-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.works-thumb img[src="images/work01.jpg"]:not([complete]),
+.works-thumb:has(img[style*="broken"]) {
+  background: #e8e4df;
+}
+.works-info { padding: 32px 32px 32px 0; flex: 1; }
+.works-title { font-size: 1.15rem; font-weight: 700; color: var(--color-main); margin-bottom: 10px; }
+.works-desc { font-size: 0.9rem; color: #666; line-height: 1.8; margin-bottom: 16px; }
+.works-link { font-size: 0.9rem; font-weight: 700; color: var(--color-accent); transition: opacity 0.2s; }
+.works-link:hover { opacity: 0.7; }
+
+/* ===== サービス ===== */
+.service { background: var(--color-light); }
+.service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 50px; }
+.service-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-main);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-accent);
+}
+.service-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  padding-left: 16px;
+  position: relative;
+}
+.service-list li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.flow-list { display: flex; flex-direction: column; gap: 16px; }
+.flow-item { display: flex; align-items: flex-start; gap: 16px; }
+.flow-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--color-accent);
+  color: var(--color-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.flow-body { flex: 1; }
+.flow-body strong { display: block; font-weight: 700; font-size: 0.95rem; }
+.flow-body span { font-size: 0.85rem; color: #666; }
+.flow-period { margin-top: 20px; font-size: 0.9rem; color: #555; }
+.flow-period strong { color: var(--color-accent); }
+
+/* ===== 料金 ===== */
+.price { background: var(--color-bg); }
+.price-cards { display: flex; gap: 24px; justify-content: center; margin-top: 48px; }
+.price-card {
+  background: var(--color-light);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  text-align: center;
+  width: 280px;
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+.price-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.price-card.is-recommended { border-color: var(--color-accent); }
+.price-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+.price-plan { font-size: 1rem; font-weight: 700; color: var(--color-main); margin-bottom: 12px; }
+.price-amount {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--color-main);
+  margin-bottom: 24px;
+}
+.price-amount span { font-size: 1.2rem; }
+.price-features { margin-bottom: 28px; }
+.price-features li {
+  font-size: 0.9rem;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  color: #555;
+}
+.price-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 24px;
+}
+
+/* ===== CTAバナー ===== */
+.cta-section {
+  background: var(--color-main);
+  color: var(--color-light);
+  text-align: center;
+  padding: 80px 0;
+}
+.cta-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.cta-sub { font-size: 0.95rem; opacity: 0.8; margin-bottom: 32px; }
+
+/* ===== お問い合わせ ===== */
+.contact { background: var(--color-bg); }
+.contact-lead { text-align: center; margin-bottom: 40px; color: #666; }
+.contact-options { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 200px;
+  padding: 36px 20px;
+  background: var(--color-light);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.contact-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  transform: translateY(-4px);
+}
+.contact-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-main);
+}
+.contact-label { font-size: 0.9rem; font-weight: 700; color: var(--color-main); }
+.contact-handle { font-size: 0.78rem; color: #888; }
+
+/* ===== フッター ===== */
+.site-footer {
+  background: var(--color-main);
+  color: var(--color-light);
+  text-align: center;
+  padding: 32px 0;
+}
+.footer-logo { font-weight: 900; font-size: 1rem; letter-spacing: 0.05em; margin-bottom: 6px; }
+.footer-copy { font-size: 0.8rem; opacity: 0.6; }
+
+/* ===== スクロールアニメーション ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ===== スマホ対応（768px以下） ===== */
+@media (max-width: 768px) {
+  section { padding: 60px 0; }
+
+  /* ヒーロー */
+  .hero { padding: 80px 0 70px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-sub { font-size: 0.95rem; }
+
+  /* ハンバーガーメニュー */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-main);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-light);
+    padding: 80px 0 24px;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  .nav-list.is-open { display: flex; }
+  .nav-list li { width: 100%; text-align: center; }
+  .nav-list a { display: block; padding: 16px 20px; font-size: 1.1rem; }
+  .nav-cta { background: none; color: var(--color-accent) !important; }
+  .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* プロフィール */
+  .about-content { flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+  .about-links { justify-content: center; }
+
+  /* 実績 */
+  .works-item { flex-direction: column; }
+  .works-thumb { width: 100%; height: 180px; }
+  .works-info { padding: 20px 20px 24px; }
+
+  /* サービス */
+  .service-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* 料金 */
+  .price-cards { flex-direction: column; align-items: center; }
+
+  /* お問い合わせ */
+  .contact-options { flex-direction: column; align-items: center; }
+  .contact-card { width: 100%; max-width: 320px; }
+
+  /* タイトル */
+  .section-title { font-size: 1.4rem; }
+  .cta-title { font-size: 1.3rem; }
+}
