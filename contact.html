@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | Sai - LP制作ポートフォリオ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="site-header">
+    <div class="inner">
+      <p class="logo"><a href="index.html">Sai.portfolio</a></p>
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html#about">プロフィール</a></li>
+          <li><a href="index.html#works">制作実績</a></li>
+          <li><a href="index.html#service">サービス</a></li>
+          <li><a href="index.html#price">料金</a></li>
+          <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ページヒーロー -->
+  <section class="page-hero">
+    <div class="inner">
+      <p class="page-hero-label">Contact</p>
+      <h1 class="page-hero-title">お問い合わせ</h1>
+      <p class="page-hero-sub">LP制作・コーディングのご依頼、ご相談はお気軽にどうぞ。<br>見積もり・相談は無料です。</p>
+    </div>
+  </section>
+
+  <!-- フォームセクション -->
+  <section class="contact-form-section">
+    <div class="inner contact-form-inner">
+
+      <!-- フォーム -->
+      <div class="contact-form-wrap">
+        <h2 class="contact-form-title">フォームからのお問い合わせ</h2>
+        <p class="contact-form-note">通常、当日〜翌営業日中にご返信いたします。</p>
+
+        <form
+          action="https://formsubmit.co/g121q062@gmail.com"
+          method="POST"
+          class="contact-form"
+          id="contactForm"
+        >
+          <input type="hidden" name="_subject" value="ポートフォリオサイトからのお問い合わせ">
+          <input type="hidden" name="_next" value="https://issei1130.github.io/contact.html?sent=true">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="form-group">
+            <label class="form-label" for="name">お名前 <span class="form-required">必須</span></label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="山田 太郎" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">メールアドレス <span class="form-required">必須</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="example@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="type">お問い合わせの種類</label>
+            <select class="form-select" id="type" name="type">
+              <option value="">選択してください</option>
+              <option value="LP制作のご依頼">LP制作のご依頼</option>
+              <option value="コーディングのご依頼">コーディングのご依頼</option>
+              <option value="ご相談・お見積もり">ご相談・お見積もり</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="budget">ご予算の目安</label>
+            <select class="form-select" id="budget" name="budget">
+              <option value="">選択してください</option>
+              <option value="3万円未満">3万円未満</option>
+              <option value="3〜5万円">3〜5万円</option>
+              <option value="5〜10万円">5〜10万円</option>
+              <option value="10万円以上">10万円以上</option>
+              <option value="未定">まだ未定</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">メッセージ <span class="form-required">必須</span></label>
+            <textarea class="form-textarea" id="message" name="message" rows="6" placeholder="ご依頼の内容、イメージ、参考サイトなどをお聞かせください。" required></textarea>
+          </div>
+
+          <button type="submit" class="form-btn cta-btn">送信する</button>
+        </form>
+
+        <!-- 送信完了メッセージ -->
+        <div class="form-success" id="formSuccess">
+          <p class="form-success-icon">✓</p>
+          <p class="form-success-title">送信しました！</p>
+          <p class="form-success-text">ありがとうございます。当日〜翌営業日中にご連絡いたします。</p>
+        </div>
+      </div>
+
+      <!-- その他の連絡手段 -->
+      <div class="contact-side">
+        <h2 class="contact-form-title">その他の連絡方法</h2>
+        <p class="contact-form-note">SNSのDMでも気軽にどうぞ！</p>
+        <div class="contact-options contact-options--vertical">
+          <a href="https://twitter.com/WEB218130661279" target="_blank" class="contact-card">
+            <span class="contact-icon">𝕏</span>
+            <span class="contact-label">X (Twitter) でDM</span>
+            <span class="contact-handle">@WEB218130661279</span>
+          </a>
+          <a href="https://note.com/ripe_falcon3395" target="_blank" class="contact-card">
+            <span class="contact-icon">n</span>
+            <span class="contact-label">noteからメッセージ</span>
+            <span class="contact-handle">ripe_falcon3395</span>
+          </a>
+          <a href="https://forms.gle/7nVjitU9kzvDQkPu5" target="_blank" class="contact-card">
+            <span class="contact-icon">✉</span>
+            <span class="contact-label">Googleフォームから</span>
+            <span class="contact-handle">お問い合わせフォーム</span>
+          </a>
+        </div>
+        <div class="contact-info-box">
+          <p class="contact-info-title">よくある質問</p>
+          <dl class="contact-faq">
+            <dt>相談だけでも大丈夫？</dt>
+            <dd>もちろんです！見積もり・相談は無料です。</dd>
+            <dt>返信にどのくらいかかる？</dt>
+            <dd>当日〜翌営業日中にご返信します。</dd>
+            <dt>副業なので対応が心配…</dt>
+            <dd>平日夜・休日が主な稼働ですが、連絡は当日中に必ず確認します。</dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p class="footer-logo">Sai.portfolio</p>
+      <p class="footer-copy">&copy; 2026 Sai. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // 送信完了表示
+    if (new URLSearchParams(location.search).get('sent') === 'true') {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

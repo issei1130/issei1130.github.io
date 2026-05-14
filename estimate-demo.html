@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無料お見積もり依頼 | デモページ</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans JP', sans-serif; color: #2c2c2c; background: #f8f7f4; line-height: 1.8; padding-bottom: 80px; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --main: #1d3461;
+      --accent: #e8633a;
+      --bg: #f8f7f4;
+      --light: #ffffff;
+      --border: #e2ddd8;
+    }
+
+    .inner { width: 90%; max-width: 860px; margin: 0 auto; }
+
+    /* ヘッダー */
+    .hd {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .hd-inner { display: flex; justify-content: space-between; align-items: center; width: 90%; max-width: 860px; margin: 0 auto; }
+    .hd-logo { font-weight: 900; font-size: 1rem; color: var(--main); }
+    .hd-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 24px;
+      border-radius: 6px;
+    }
+
+    /* ヒーロー */
+    .hero {
+      background: linear-gradient(135deg, #0d1f3c, #1d3461);
+      color: white;
+      padding: 72px 0 64px;
+      text-align: center;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      border: 1px solid rgba(232,99,58,0.5);
+      background: rgba(232,99,58,0.08);
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero-title { font-size: 2rem; font-weight: 900; line-height: 1.4; margin-bottom: 16px; }
+    .hero-title span { color: var(--accent); }
+    .hero-sub { font-size: 0.95rem; opacity: 0.8; margin-bottom: 36px; }
+    .hero-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 48px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(232,99,58,0.4);
+    }
+
+    /* セクション共通 */
+    section { padding: 72px 0; }
+    .sec-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--main);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .sec-title::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: var(--accent);
+      margin: 10px auto 0;
+    }
+    .sec-lead { text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 44px; }
+
+    /* サービス */
+    .service { background: white; }
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .service-icon { font-size: 2rem; margin-bottom: 12px; }
+    .service-name { font-weight: 700; color: var(--main); margin-bottom: 8px; }
+    .service-desc { font-size: 0.83rem; color: #666; line-height: 1.7; }
+
+    /* 流れ */
+    .flow { background: var(--bg); }
+    .flow-list { display: flex; flex-direction: column; gap: 0; max-width: 600px; margin: 0 auto; }
+    .flow-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .flow-item:last-child { border-bottom: none; }
+    .flow-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.8rem;
+    }
+    .flow-body strong { display: block; font-weight: 700; color: var(--main); margin-bottom: 2px; }
+    .flow-body span { font-size: 0.85rem; color: #666; }
+
+    /* フォームセクション */
+    .form-sec { background: white; }
+    .form-wrap {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+    .form-label { font-size: 0.88rem; font-weight: 700; color: var(--main); display: flex; align-items: center; gap: 8px; }
+    .req {
+      font-size: 0.7rem;
+      background: var(--accent);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.95rem;
+      background: white;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--main); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .form-note { font-size: 0.8rem; color: #888; margin-bottom: 24px; }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: var(--accent);
+      color: white;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(232,99,58,0.35);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .submit-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* 固定ボタン */
+    .fixed-btn {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      z-index: 200;
+      cursor: pointer;
+      box-shadow: 0 -4px 16px rgba(232,99,58,0.25);
+    }
+    .fixed-btn a { color: white; display: block; }
+
+    /* デモ注記 */
+    .demo-badge {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 600px) {
+      .hero-title { font-size: 1.5rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .form-wrap { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- デモ注記 -->
+  <div class="demo-badge">⚡ これはHTML/CSSコーディングのデモページです（修正前後のCTA文言変更・フォーム改修の実装例）</div>
+
+  <!-- ヘッダー -->
+  <div class="hd">
+    <div class="hd-inner">
+      <p class="hd-logo">○○サービス</p>
+      <a href="#form" class="hd-cta">無料お見積もりはこちら</a>
+    </div>
+  </div>
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="inner">
+      <p class="hero-label">完全無料・最短即日回答</p>
+      <h1 class="hero-title">あなたのビジネスに合った<br><span>最適なプランを無料でご提案</span></h1>
+      <p class="hero-sub">まずはお気軽にお見積もりください。しつこい営業は一切しません。</p>
+      <a href="#form" class="hero-btn">無料お見積もりを依頼する →</a>
+    </div>
+  </section>
+
+  <!-- サービス -->
+  <section class="service">
+    <div class="inner">
+      <h2 class="sec-title">サービス内容</h2>
+      <p class="sec-lead">お客様のニーズに合わせてご提案します</p>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <p class="service-name">プランA</p>
+          <p class="service-desc">スタンダードなプランです。初めての方にもおすすめ。</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <p class="service-name">プランB</p>
+          <p class="service-desc">スピード重視の方向けプランです。最短即日対応可能。</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👑</div>
+          <p class="service-name">プランC</p>
+          <p class="service-desc">ボリュームディスカウントあり。継続利用でさらにお得に。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ご利用の流れ -->
+  <section class="flow">
+    <div class="inner">
+      <h2 class="sec-title">ご利用の流れ</h2>
+      <p class="sec-lead">お見積もりから最短3ステップで開始できます</p>
+      <ol class="flow-list">
+        <li class="flow-item">
+          <span class="flow-num">01</span>
+          <div class="flow-body">
+            <strong>無料お見積もりを依頼</strong>
+            <span>フォームに必要事項をご記入ください。所要時間は約2分です。</span>
+          </div>
+        </li>
+        <li class="flow-item">
+          <span class="flow-num">02</span>
+          <div class="flow-body">
+            <strong>担当者からご連絡</strong>
+            <span>最短即日、通常24時間以内にお見積もりをお送りします。</span>
+          </div>
+        </li>
+        <li class="flow-item">
+          <span class="flow-num">03</span>
+          <div class="flow-body">
+            <strong>ご契約・サービス開始</strong>
+            <span>内容にご納得いただければ、すぐにサービスを開始できます。</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- お見積もりフォーム -->
+  <section class="form-sec" id="form">
+    <div class="inner">
+      <h2 class="sec-title">無料お見積もり依頼フォーム</h2>
+      <p class="sec-lead">しつこい営業は一切しません。まずはお気軽にどうぞ。</p>
+      <div class="form-wrap">
+        <p class="form-note">※ 通常24時間以内にご返信いたします。</p>
+        <div class="form-group">
+          <label class="form-label" for="name">お名前 <span class="req">必須</span></label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="tel">電話番号</label>
+          <input class="form-input" type="tel" id="tel" name="tel" placeholder="090-0000-0000">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">メールアドレス <span class="req">必須</span></label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="plan">ご希望のプラン</label>
+          <select class="form-select" id="plan" name="plan">
+            <option value="">選択してください</option>
+            <option>プランA</option>
+            <option>プランB</option>
+            <option>プランC</option>
+            <option>まだ決まっていない</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">ご要望・ご質問</label>
+          <textarea class="form-textarea" id="message" name="message" rows="4" placeholder="ご不明な点やご要望があればお書きください。"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">無料お見積もりを依頼する →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 固定ボタン -->
+  <div class="fixed-btn">
+    <a href="#form">📝 無料お見積もりはこちら（完全無料・しつこい営業なし）</a>
+  </div>
+
+</body>
+</html>
