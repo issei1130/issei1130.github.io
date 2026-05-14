@@ -89,6 +89,17 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeEls.forEach(el => observer.observe(el));
 
+/* ===== フローティングCTA ===== */
+const floatCta = document.getElementById('floatCta');
+if (floatCta) {
+  const hero = document.querySelector('.hero');
+  const showFloat = () => {
+    const heroBottom = hero ? hero.getBoundingClientRect().bottom : 400;
+    floatCta.classList.toggle('is-visible', heroBottom < 0);
+  };
+  window.addEventListener('scroll', showFloat, { passive: true });
+}
+
 /* ===== 画像エラー時プレースホルダー ===== */
 document.querySelectorAll('.works-thumb img').forEach(img => {
   img.addEventListener('error', () => {

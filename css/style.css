@@ -703,6 +703,53 @@ section { padding: 80px 0; }
   .cta-title { font-size: 1.3rem; }
 }
 
+/* ===== モニター価格バナー ===== */
+.price-monitor {
+  margin-top: 36px;
+  background: linear-gradient(135deg, rgba(232,99,58,0.06), rgba(232,99,58,0.12));
+  border: 2px solid rgba(232,99,58,0.35);
+  border-radius: 12px;
+  padding: 24px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.price-monitor-text {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+.price-monitor-text strong { color: var(--color-accent); }
+
+/* ===== フローティングCTA ===== */
+.float-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s, transform 0.35s;
+  pointer-events: none;
+}
+.float-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.float-cta .cta-btn {
+  box-shadow: 0 8px 28px rgba(232,99,58,0.45);
+  font-size: 0.9rem;
+  padding: 13px 28px;
+}
+
+@media (max-width: 768px) {
+  .float-cta { bottom: 16px; right: 16px; }
+  .price-monitor { padding: 20px 16px; }
+}
+
 /* ===== ページヒーロー（contact.html用） ===== */
 .page-hero {
   background: linear-gradient(135deg, #0d1f3c 0%, #1d3461 100%);
